@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main-background {
+  animation: animate-background linear 5s infinite;
+  background: url('../images/background-01.png') repeat-x;
+  background-size: 100% 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.air-craft {
+  background: url('../images/valkirya.png');
+  background-size: 100% 100%;
+  height: 57px;
+  left: 0%;
+  position: absolute;
+  top: 50%;
+  width: 228px;
+}
+
+@keyframes animate-background {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -1370px;
+  }
+}
+
+@keyframes face-forward {
+  0% { background-position: 228px 228px;  }
+  100% { background-position: 228px 228px;  }
+}
+
+@keyframes walk-right {
+  0% { background-position: 228px 228px;  }
+  100% { background-position: 228px 228px;  }
+}
+
+@keyframes walk-left {
+  0% { background-position: 228px 228px;  }
+  100% { background-position: 228px 228px;  }
+}
+
+@keyframes fire {
+  0% { 
+    background: url('../images/valkirya-shoot.png');
+    background-size: 100% 100%;  
+  }
+  50% { 
+    background: url('../images/valkirya.png');
+    background-size: 100% 100%;
+  }
+  100% {
+    background: url('../images/valkirya-shoot.png');
+    background-size: 100% 100%;
+  }
+}
