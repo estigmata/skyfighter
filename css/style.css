@@ -39,22 +39,12 @@ html, body {
   100% { background-position: 228px 228px;  }
 }
 
-@keyframes walk-right {
-  0% { background-position: 228px 228px;  }
-  100% { background-position: 228px 228px;  }
-}
-
-@keyframes walk-left {
-  0% { background-position: 228px 228px;  }
-  100% { background-position: 228px 228px;  }
-}
-
 @keyframes fire {
-  0% { 
+  0% {
     background: url('../images/valkirya-shoot.png');
-    background-size: 100% 100%;  
+    background-size: 100% 100%;
   }
-  50% { 
+  50% {
     background: url('../images/valkirya.png');
     background-size: 100% 100%;
   }
