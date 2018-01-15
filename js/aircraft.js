@@ -9,7 +9,6 @@ class AirCraft {
   moveRight() {
     this.x += 10;
     this.player.style.left = this.x + 'px';
-    this.player.style.animation = "walk-right 0.8s steps(4) infinite";
   }
 
   moveLeft() {
@@ -29,6 +28,20 @@ class AirCraft {
 
   fire() {
     this.player.style.animation = "fire .15s infinite";
+    this.burst();
+  }
+
+  burst() {
+    var $bullet = $("<div>", { "class": "bullet" });
+    $bullet.css({
+      left: this.x + 170,
+      top: this.y + 38
+    });
+    $bullet
+      .appendTo($('body'))
+      .animate({left: this.x + window.screen.width - 26}, 1000, function() {
+        $(this).remove();
+      });
   }
 
   info() {
