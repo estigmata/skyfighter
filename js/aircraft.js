@@ -1,4 +1,6 @@
 
+
+
 class AirCraft {
   constructor(player) {
     this.player = player;
@@ -32,7 +34,12 @@ class AirCraft {
   }
 
   burst() {
-    var $bullet = $("<div>", { "class": "bullet" });
+    var bullet = document.createElement('div');
+    bullet.classList.add('bullet');
+    document.body.appendChild(bullet);
+    bullet.style.top = this.y + 38;
+
+    /*var $bullet = $("<div>", { "class": "bullet" });
     $bullet.css({
       left: this.x + 170,
       top: this.y + 38
@@ -41,7 +48,7 @@ class AirCraft {
       .appendTo($('body'))
       .animate({left: this.x + window.screen.width - 26}, 1000, function() {
         $(this).remove();
-      });
+      });*/
   }
 
   info() {
