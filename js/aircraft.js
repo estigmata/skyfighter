@@ -35,20 +35,23 @@ class AirCraft {
 
   burst() {
     var bullet = document.createElement('div');
+    var left = this.x + 170;
+    var xScreen = window.screen.width - 26;
     bullet.classList.add('bullet');
     document.body.appendChild(bullet);
-    bullet.style.top = this.y + 38;
-
-    /*var $bullet = $("<div>", { "class": "bullet" });
-    $bullet.css({
-      left: this.x + 170,
-      top: this.y + 38
-    });
-    $bullet
-      .appendTo($('body'))
-      .animate({left: this.x + window.screen.width - 26}, 1000, function() {
-        $(this).remove();
-      });*/
+    bullet.style.top = this.y + 38 + 'px';
+    bullet.style.left = left + 'px';
+    var line = setInterval(lineFire, 1);
+    function lineFire() {
+      if (left > xScreen) {
+        console.log('remove bullet');
+        bullet.remove()
+        clearInterval(line);
+      } else {
+        left++;
+        bullet.style.left = left + 'px';
+      }
+    }
   }
 
   info() {
