@@ -1,12 +1,12 @@
 class Scenario {
-  constructor() {
+  constructor () {
     this.maxXScreen = window.screen.width;
     this.maxYScreen = window.screen.height;
   }
 }
 
 class Bullet {
-  constructor(params) {
+  constructor (params) {
     this.bullet = document.createElement('div');
     this.bullet.classList.add('bullet');
     this.left = params.x + 170;
@@ -16,14 +16,14 @@ class Bullet {
     this.bullet.style.top = this.top + 'px';
   }
 
-  burst(maxXScreen) {
+  burst (maxXScreen) {
     var params = {
       bullet: this.bullet,
       left: this.left,
       maxXScreen: maxXScreen
     }
     var line = setInterval(setFire, 0);
-    function setFire() {
+    function setFire () {
       if (params.left > params.maxXScreen) {
         params.bullet.remove();
         clearInterval(line);
@@ -35,36 +35,35 @@ class Bullet {
   }
 }
 
-
 class AirCraft {
-  constructor(player) {
+  constructor (player) {
     this.player = player;
     this.x = this.player.offsetLeft;
     this.y = this.player.offsetTop;
   }
 
-  moveRight() {
+  moveRight () {
     this.x += 10;
     this.player.style.left = this.x + 'px';
   }
 
-  moveLeft() {
+  moveLeft () {
     this.x -= 10;
     this.player.style.left = this.x + 'px';
   }
 
-  moveUp() {
+  moveUp () {
     this.y -= 10;
     this.player.style.top = this.y + 'px';
   }
 
-  moveDown() {
+  moveDown () {
     this.y += 10;
     this.player.style.top = this.y + 'px';
   }
 
-  fire() {
-    this.player.style.animation = "fire 0s infinite";
+  fire () {
+    this.player.style.animation = "fire 0.25s infinite";
     var params = {
       x: this.x,
       y: this.y,
@@ -73,7 +72,7 @@ class AirCraft {
     bullet.burst(window.screen.width - 26);
   }
 
-  info() {
+  info () {
     console.log('Nuevo player: ', this.x);
   }
 }

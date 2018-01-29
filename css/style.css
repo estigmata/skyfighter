@@ -1,15 +1,91 @@
 html, body {
+  font-family: 'Nova Square';
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+a {
+  color: rgba(255, 255, 255, .5);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.title-app {
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+
+.nav {
+  list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+
+.nav li {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.nav li a {
+  font-size: 24px;
+}
+
+.main {
+  background: url('../images/background-02.jpg') no-repeat;
+  background-size: cover;
   height: 100%;
-  overflow: hidden;
+  position: relative;
   width: 100%;
+}
+
+.logo {
+  background: url('../images/background-top.jpg') no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.logo img {
+  margin: 10px auto;
+}
+
+.row {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.row::after,
+.row::before {
+  clear: both;
+  content: "";
+  display: table;
+  height: 0;
+  width: 0;
+}
+
+.left, .right {
+  float: left;
+  width: 50%;
+}
+
+.right {
+  text-align: center;
 }
 
 .scenario {
   animation: animate-background linear 5s infinite;
   background: url('../images/background-01.png') repeat-x;
   background-size: 100% 100%;
+  display: none;
   height: 100%;
   margin: 0;
   width: 100%;
