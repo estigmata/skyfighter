@@ -20,7 +20,7 @@
           <h1 class="title-app">Sky Fighter</h1>
           <ul class="nav">
             <li>
-              <a href="#">Options</a>
+              <a href="#" onclick="options(event)">Options</a>
             </li>
             <li>
               <a href="#">Choose your fighter</a>
@@ -28,15 +28,48 @@
           </ul>
         </div>
         <div class="right">
-          <img class="fighter" src="./images/fighter.png" />
+          <div id="presentation">
+            <img class="fighter" src="./images/fighter.png" />
+          </div>
+          <div id="slider">
+            <a href="#" class="control_next">&gt;</a>
+            <a href="#" class="control_prev">&lt;</a>
+            <ul>
+              <li>
+                <div class="show-room">
+                  <h3>F/A-25C</h3>
+                  <img src="./images/fa25c/01.png" />
+                  <img src="./images/fa25c/02.png" />
+                  <img src="./images/fa25c/03.png" />
+                </div>
+              </li>
+              <li>
+                <div class="show-room">
+                  <h3>F/A-45N</h3>
+                  <img src="./images/fa45n/01.png" />
+                  <img src="./images/fa45n/02.png" />
+                  <img src="./images/fa45n/03.png" />
+                </div>
+              </li>
+              <li>
+                <div class="show-room">
+                  <h3>F/A-18I</h3>
+                  <img src="./images/fa18i/01.png" />
+                  <img src="./images/fa18i/02.png" />
+                  <img src="./images/fa18i/03.png" />
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
-    <section class="scenario">
+    <section class="scenario" style="display: none;">
       <div class="air-craft" id="air-craft"></div>
     </section>
 
     <script src="./js/jquery.js"></script>
+    <script src="./js/slider.js"></script>
     <script src="./js/aircraft.js"></script>
     <script src="./js/index.js"></script>
   </body>

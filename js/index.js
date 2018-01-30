@@ -32,5 +32,16 @@ function moveAnimation(keyPress) {
 }
 
 function stopAnimation() {
-  player.style.animation = "face-forward 1s infinite";
+  player.style.animation = 'face-forward 1s infinite';
+}
+
+function options (e) {
+  slider = document.getElementById('slider');
+  presentation = document.getElementById('presentation');
+
+  e.preventDefault();
+
+  presentation.style.display = 'none';
+  slider.style.display = 'block';
+  slider.style.height = '100%';
 }

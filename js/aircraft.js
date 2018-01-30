@@ -38,6 +38,7 @@ class Bullet {
 class AirCraft {
   constructor (player) {
     this.player = player;
+    this.playerModel = this.player.getAttribute('id');
     this.x = this.player.offsetLeft;
     this.y = this.player.offsetTop;
   }
@@ -63,7 +64,7 @@ class AirCraft {
   }
 
   fire () {
-    this.player.style.animation = "fire 0.25s infinite";
+    this.player.style.animation = 'fire-' + this.playerModel + ' 0.25s infinite';
     var params = {
       x: this.x,
       y: this.y,
