@@ -5,6 +5,8 @@ class Scenario {
   }
 }
 
+var scenario = new Scenario();
+
 class Bullet {
   constructor (params) {
     this.bullet = document.createElement('div');
@@ -32,6 +34,34 @@ class Bullet {
         params.bullet.style.left = params.left + 'px';
       }
     };
+  }
+}
+
+class Enemy {
+  constructor () {
+    this.enemy = document.createElement('div');
+    this.enemy.classList.add('enemy');
+    document.body.appendChild(this.enemy);
+    this.enemy.style.left = scenario.maxXScreen - 100 + 'px';
+    this.enemy.style.top = 50 + '%';
+    this.positionX = scenario.maxXScreen - 100;
+  }
+
+  fly () {
+    var params = {
+      enemy: this.enemy,
+      positionX: this.positionX
+    }
+    var live = setInterval(liveCycle, 0);
+    function liveCycle () {
+      if (params.positionX == 0) {
+        params.enemy.remove();
+        clearInterval(live);
+      } else {
+        params.positionX--;
+        params.enemy.style.left = params.positionX + 'px';
+      }
+    }
   }
 }
 
@@ -71,9 +101,10 @@ class AirCraft {
     };
     var bullet = new Bullet(params);
     bullet.burst(window.screen.width - 26);
+    bullets.push(bullet);
   }
 
   info () {
-    console.log('Nuevo player: ', this.x);
+    console.log('Nuevo player: ', this.playerModel);
   }
 }

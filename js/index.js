@@ -2,13 +2,30 @@ window.addEventListener('load', function(event) {
   docReady();
 });
 
+var requestAnimFrame = (function(){
+  return window.requestAnimationFrame  ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame    ||
+    window.oRequestAnimationFrame      ||
+    window.msRequestAnimationFrame     ||
+    function(callback){
+        window.setTimeout(callback, 1000 / 60);
+    };
+})();
+
 document.onkeydown = moveAnimation;
 document.onkeyup = stopAnimation;
 
+var bullets = [];
+var enemies = [];
+
 function docReady() {
-  player = document.getElementById('air-craft');
+  player = document.getElementById('fa45n');
   ship = new AirCraft(player);
+  enemy = new Enemy();
+  enemy.fly();
   ship.info();
+  //requestAnimFrame(docReady);
 }
 
 function moveAnimation(keyPress) {
@@ -35,7 +52,7 @@ function stopAnimation() {
   player.style.animation = 'face-forward 1s infinite';
 }
 
-function options (e) {
+function choose (e) {
   slider = document.getElementById('slider');
   presentation = document.getElementById('presentation');
 
