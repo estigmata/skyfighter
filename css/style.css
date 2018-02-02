@@ -1,4 +1,4 @@
-@import 'panel.css';
+@import 'layout.css';
 @import 'enemy.css';
 @import 'air-craft.css';
 
@@ -89,6 +89,7 @@ a:hover {
   animation: animate-background linear 5s infinite;
   background: url('../images/background-01.png') repeat-x;
   background-size: 100% 100%;
+  display: none;
   height: 100%;
   margin: 0;
   width: 100%;

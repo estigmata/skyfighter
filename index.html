@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nova+Square" rel="stylesheet" />
   </head>
   <body>
-    <section class="main">
+    <section class="main" id="main">
       <div class="logo">
         <img src="./images/logo.png" />
       </div>
@@ -43,7 +43,7 @@
                   <img src="./images/fa25c/01.png" />
                   <img src="./images/fa25c/02.png" />
                   <img src="./images/fa25c/03.png" />
-                  <a href="#" onclick="select('fa25c')">
+                  <a class="select-button" href="#" onclick="selectFighter(event, 'fa25c')">
                     Select F/A-25C
                   </a>
                 </div>
@@ -54,7 +54,7 @@
                   <img src="./images/fa45n/01.png" />
                   <img src="./images/fa45n/02.png" />
                   <img src="./images/fa45n/03.png" />
-                  <a href="#" onclick="select('fa45n')">
+                  <a class="select-button" href="#" onclick="selectFighter(event, 'fa45n')">
                     Select F/A-45N
                   </a>
                 </div>
@@ -65,7 +65,7 @@
                   <img src="./images/fa18i/01.png" />
                   <img src="./images/fa18i/02.png" />
                   <img src="./images/fa18i/03.png" />
-                  <a href="#" onclick="select('fa18i')">
+                  <a class="select-button" href="#" onclick="selectFighter(event, 'fa18i')">
                     Select F/A-18I
                   </a>
                 </div>
@@ -75,8 +75,7 @@
         </div>
       </div>
     </section>
-    <section class="scenario" style="display: none;">
-      <div class="air-craft" id="air-craft"></div>
+    <section class="scenario" id="scenario">
     </section>
 
     <script src="./js/jquery.js"></script>

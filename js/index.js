@@ -19,7 +19,7 @@ document.onkeyup = stopAnimation;
 var bullets = [];
 var enemies = [];
 
-function docReady() {
+function docReady () {
   player = document.getElementById('fa45n');
   ship = new AirCraft(player);
   enemy = new Enemy();
@@ -28,7 +28,7 @@ function docReady() {
   //requestAnimFrame(docReady);
 }
 
-function moveAnimation(keyPress) {
+function moveAnimation (keyPress) {
   switch (keyPress.keyCode) {
     case 39:
       ship.moveRight();
@@ -48,7 +48,7 @@ function moveAnimation(keyPress) {
   }
 }
 
-function stopAnimation() {
+function stopAnimation () {
   player.style.animation = 'face-forward 1s infinite';
 }
 
@@ -61,4 +61,14 @@ function choose (e) {
   presentation.style.display = 'none';
   slider.style.display = 'block';
   slider.style.height = '100%';
+}
+
+function selectFighter (e, airCraftModel) {
+  main = document.getElementById('main');
+  scenario = document.getElementById('scenario');
+
+  e.preventDefault();
+
+  main.style.display = 'none';
+  scenario.style.display = 'block';
 }
