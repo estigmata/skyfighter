@@ -1,7 +1,3 @@
-window.addEventListener('load', function(event) {
-  docReady();
-});
-
 var requestAnimFrame = (function(){
   return window.requestAnimationFrame  ||
     window.webkitRequestAnimationFrame ||
@@ -18,15 +14,6 @@ document.onkeyup = stopAnimation;
 
 var bullets = [];
 var enemies = [];
-
-function docReady () {
-  player = document.getElementById('fa45n');
-  ship = new AirCraft(player);
-  enemy = new Enemy();
-  enemy.fly();
-  ship.info();
-  //requestAnimFrame(docReady);
-}
 
 function moveAnimation (keyPress) {
   switch (keyPress.keyCode) {
@@ -71,4 +58,13 @@ function selectFighter (e, airCraftModel) {
 
   main.style.display = 'none';
   scenario.style.display = 'block';
+  craft = document.createElement('div');
+  craft.setAttribute('id', airCraftModel);
+  scenario.appendChild(craft);
+  window.addEventListener('load', function(event) {
+    docReady();
+  });
+  player = document.getElementById(airCraftModel);
+  ship = new AirCraft(player);
+  ship.info();
 }
